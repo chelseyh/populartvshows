@@ -4,6 +4,7 @@
 
     <!--this is where you are able to import the components into the page to display--->
     <Header pageheading="Popular TV Shows"/>
+    <p  v-for="show in showlist" v-bind:key="show.id"></p>
     <ShowList theTitle="My Shows" v-bind:showlist="displayshows"/>
   </div>
 </template>
