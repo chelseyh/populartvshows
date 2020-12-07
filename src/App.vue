@@ -4,8 +4,12 @@
 
     <!--this is where you are able to import the components into the page to display--->
     <Header pageheading="Popular TV Shows"/>
-    <p  v-for="show in showlist" v-bind:key="show.id"></p>
-    <ShowList theTitle="My Shows" v-bind:showlist="displayshows"/>
+    <!-- <p  v-for="show in showlist" v-bind:key="show.id"></p> -->
+    <div class="container">
+    <div class="row">
+    <ShowList theTitle="My Shows" v-for="show in displayshows.slice(0,4)" v-bind:key="show.id" v-bind:eachshow="show" />
+    </div>
+    </div>
   </div>
 </template>
 
@@ -37,9 +41,18 @@ export default {
     .then( (response) =>
     {
       console.log(response.data)
-      this.displayshows = response.data
+      this.displayshows = response.data.results
     })
   }
 }
 </script>
+
+<style scoped>
+#app {
+background: black;
+
+}
+
+
+</style>
 

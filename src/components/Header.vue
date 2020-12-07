@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header container-fluid">
         <h1>{{pageheading}}</h1>
     </div>
 </template>
